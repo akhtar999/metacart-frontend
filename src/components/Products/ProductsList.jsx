@@ -13,20 +13,20 @@ const ProductsList = () => {
   const [sortedProduct, setSortedProduct] = useState([]);
   const [products, setProducts] = useState([]);
   const [error, setError] = useState("");
-  const [search, setSearch] = useSearchParams();
-  const category = search.get("category");
-  const page = search.get("page");
+  // const [search, setSearch] = useSearchParams();
+  // const category = search.get("category");
+  // const page = search.get("page");
   // const searchQuery = search.get("search");
   useEffect(() => {
     setIsLoading(true);
     apiClient
       .get("/products", {
-        params: {
-          // search: searchQuery,
-          category,
-          perPage: 24,
-          page,
-        },
+        // params: {
+        //   // search: searchQuery,
+        //   category,
+        //   perPage: 24,
+        //   page,
+        // },
       })
       .then((res) => {
         setProducts(res.data.products);
@@ -38,13 +38,13 @@ const ProductsList = () => {
       });
   }, [category, page]);
   const skeleton = [1, 2, 3, 4, 5, 6, 7, 8];
-  const handlePageChange = (page) => {
-    const currentParams = Object.fromEntries([...search]);
-    setSearch({
-      ...currentParams,
-      page: page,
-    });
-  };
+  // const handlePageChange = (page) => {
+  //   const currentParams = Object.fromEntries([...search]);
+  //   setSearch({
+  //     ...currentParams,
+  //     page: page,
+  //   });
+  // };
 
   // useEffect(() => {
   //   const handleScroll = () => {
