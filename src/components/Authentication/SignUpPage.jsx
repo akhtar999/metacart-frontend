@@ -65,7 +65,7 @@ const SignUpPage = () => {
           <div className="image_preview">
             <img
               src={profilePic ? URL.createObjectURL(profilePic) : user}
-              id="file-ip-1-preview"
+              id="file-ip-1-preview" alt="profile pic"
             />
           </div>
           <label htmlFor="file-ip-1" className="image_label">
