@@ -1,6 +1,6 @@
 import React from "react";
 import "./QuantityInput.css";
-import CartPage from "./../Cart/CartPage";
+// import CartPage from "./../Cart/CartPage";
 
 const QuantityInput = ({
   quantity,

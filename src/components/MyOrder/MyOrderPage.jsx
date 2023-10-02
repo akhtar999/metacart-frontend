@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./MyOrderPage.css";
 import Table from "../Common/Table";
 import apiClient from "../../utils/api-client";
-import Loader from "./../Common/Loader";
+
 
 const MyOrderPage = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const [orders, setOrders] = useState([]);
   const [error, setError] = useState("");
 
@@ -28,7 +28,7 @@ const MyOrderPage = () => {
 
   return (
     <section className="align_center myorder_page">
-      {isLoading && <Loader />}
+
       {error && <h5 className="form_error">{error}</h5>}
       {orders && (
         <Table headings={["Order", "Products", "Total", "Status"]}>

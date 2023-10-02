@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./FeaturedProduct.css";
 import ProductCard from "../Products/ProductCard";
 import apiClient from "../../utils/api-client";
-import ProductCardSkeleton from "../Products/ProductCardSkeleton";
-import Skeleton from "react-loading-skeleton";
 
 const FeaturedProduct = () => {
   const [product, setProduct] = useState([]);

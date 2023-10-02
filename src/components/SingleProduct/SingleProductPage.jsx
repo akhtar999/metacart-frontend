@@ -4,7 +4,7 @@ import config from "../../config.json";
 import QuantityInput from "./QuantityInput";
 import { useParams } from "react-router-dom";
 import apiClient from "../../utils/api-client";
-import Loader from "./../Common/Loader";
+// import Loader from "./../Common/Loader";
 import Cartcontext from "../../contexts/CartContexts";
 import Usercontext from "../../contexts/UserContexts";
 
@@ -12,7 +12,7 @@ const SingleProductPage = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const [product, setProducts] = useState();
   const [error, setError] = useState("");
   const { addToCart } = useContext(Cartcontext);
@@ -23,7 +23,7 @@ const SingleProductPage = () => {
       .get(`/products/${id}`)
       .then((res) => setProducts(res.data))
       .catch((err) => setError(err.message));
-  }, []);
+  }, [id]);
   return (
     <>
       {product && (

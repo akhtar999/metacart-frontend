@@ -13,7 +13,7 @@ const ProductsList = () => {
   const [sortedProduct, setSortedProduct] = useState([]);
   const [products, setProducts] = useState([]);
   const [error, setError] = useState("");
-  const [search, setSearch] = useSearchParams();
+  // const [search, setSearch] = useSearchParams();
   const category = search.get("category");
   const page = search.get("page");
   // const searchQuery = search.get("search");
