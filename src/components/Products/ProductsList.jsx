@@ -13,7 +13,7 @@ const ProductsList = () => {
   const [sortedProduct, setSortedProduct] = useState([]);
   const [products, setProducts] = useState([]);
   const [error, setError] = useState("");
-  // const [search, setSearch] = useSearchParams();
+  const [search, setSearch] = useSearchParams();
   const category = search.get("category");
   const page = search.get("page");
   // const searchQuery = search.get("search");
@@ -38,13 +38,13 @@ const ProductsList = () => {
       });
   }, [category, page]);
   const skeleton = [1, 2, 3, 4, 5, 6, 7, 8];
-  // const handlePageChange = (page) => {
-  //   const currentParams = Object.fromEntries([...search]);
-  //   setSearch({
-  //     ...currentParams,
-  //     page: page,
-  //   });
-  // };
+  const handlePageChange = (page) => {
+    const currentParams = Object.fromEntries([...search]);
+    setSearch({
+      ...currentParams,
+      page: page,
+    });
+  };
 
   // useEffect(() => {
   //   const handleScroll = () => {
